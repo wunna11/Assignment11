@@ -1,10 +1,12 @@
 import React, { Component, useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TextInput, Button } from "react-native";
 
-class Register extends React.Component {
+
+
+class Register extends React.Component<{},any> {
 
   constructor(props: any) {
-    super();
+    super(props);
     this.state = {
       name: '',
       nameError: '',
@@ -82,7 +84,8 @@ class Register extends React.Component {
             style={styles.inputBox}
             placeholder="Email Address"
             keyboardType="default"
-            onChangeText={(text) => {this.setState({email: text})}}
+            onChangeText={(text) => { this.setState({ email: text }) }}
+            value={this.state.email}
           />
 
           <Text style={{color: 'red'}}>{this.state.emailError}</Text>
@@ -94,7 +97,8 @@ class Register extends React.Component {
             style={styles.inputBox}
             placeholder="Phone Number"
             keyboardType="numeric"
-            onChangeText={(number) => {this.setState({phone: number})}}
+            onChangeText={(number) => { this.setState({ phone: number }) }}
+            value={this.state.phone}
           />
 
           <Text style={{color: 'red'}}>{this.state.phoneError}</Text>
@@ -106,8 +110,8 @@ class Register extends React.Component {
             style={styles.inputBox}
             placeholder="Password"
             keyboardType="numeric"
-            onChangeText={(text) => {this.setState({password: text})}}
-
+            onChangeText={(number) => { this.setState({ password: number }) }}
+            value={this.state.password}
           />
 
           <Text style={{color: 'red'}}>{this.state.passwordError}</Text>
@@ -119,7 +123,8 @@ class Register extends React.Component {
             style={styles.inputBox}
             placeholder="Confirm Password"
             keyboardType="numeric"
-            onChangeText={(text) => {this.setState({confirmPassword: text})}}
+            onChangeText={(number) => { this.setState({ confirmPassword: number }) }}
+            value={this.state.confirmPassword}
           />
 
           <Text style={{color: 'red'}}>{this.state.confirmPasswordError}</Text>
